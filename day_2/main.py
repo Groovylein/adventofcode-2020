@@ -12,7 +12,7 @@ def password_validation(condition, password):
 if __name__ == "__main__":
     input_condition_list = []
     input_password_list = []
-    counter_invalid = 0
+    counter_valid = 0
     current_dir = os.path.dirname(os.path.abspath(__file__))
     input_file = os.path.join(current_dir, 'input.txt')
     with open(input_file, "r") as openfile:
@@ -20,7 +20,7 @@ if __name__ == "__main__":
             line = line.strip()
             # print(line)
             input_condition, input_password = line.split(":")
-            if password_validation(input_condition, input_password) is False:
-                counter_invalid += 1
+            if password_validation(input_condition, input_password) is True:
+                counter_valid += 1
     
-    print("ANSWER PART ONE:", counter_invalid)
+    print("ANSWER PART ONE:", counter_valid)
