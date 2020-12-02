@@ -1,3 +1,5 @@
+import os
+
 def find_two_numbers(number_list: list) -> tuple:
     search_sum = 2020
     for number in number_list:
@@ -21,7 +23,9 @@ def find_three_numbers(number_list: list) -> tuple:
     return (0,0,0)
 
 if __name__ == "__main__":
-    with open("input.txt", "r") as openfile:
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    input_file = os.path.join(current_dir, 'input.txt')
+    with open(input_file, "r") as openfile:
         numbers_in_file = [int(n) for n in openfile.read().splitlines()]
     # print(numbers_in_file)
     number_a1, number_b1 = find_two_numbers(numbers_in_file[:])
