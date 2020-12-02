@@ -17,20 +17,20 @@ def test_valid_1():
     test_input_condition_1 = test_input_condition_list[0]
     test_input_password_1 = test_input_password_list[0]
 
-    valid_password = main.password_validation(test_input_condition_1, test_input_password_1)
+    valid_password = main.password_validation_part_one(test_input_condition_1, test_input_password_1)
     assert valid_password is True
 
 def test_invalid():
     test_input_condition_2 = test_input_condition_list[1]
     test_input_password_2 = test_input_password_list[1]
 
-    valid_password = main.password_validation(test_input_condition_2, test_input_password_2)
+    valid_password = main.password_validation_part_one(test_input_condition_2, test_input_password_2)
     assert valid_password is False
 
 def test_valid_2():
     test_input_condition_3 = test_input_condition_list[2]
     test_input_password_3 = test_input_password_list[2]
 
-    valid_password = main.password_validation(test_input_condition_3, test_input_password_3)
+    valid_password = main.password_validation_part_one(test_input_condition_3, test_input_password_3)
     assert valid_password is True
 
