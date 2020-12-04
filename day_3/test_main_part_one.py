@@ -22,6 +22,6 @@ def test_run():
 
     input_list = main.read_input(test_input_file)
 
-    trees = main.toboggan_run(input_list)
+    trees = main.toboggan_run(input_list, 3, 1)
 
     assert trees == 7
