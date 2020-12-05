@@ -64,16 +64,17 @@ def check_height(hgt):
         elif unit == "cm":
             if 150 <= int(number) <= 193:
                 return True
-        print("Invalid Height")
+        print("Invalid Height", hgt)
         return False
     except:
-        print("Invalid Height")
+        print("Invalid Height", hgt)
         return False
+
 
 def check_hair(hcl):
     if re.search(r"^#([0-9a-f]{6})", hcl):
         return True
-    print("Invalid Hair")
+    print("Invalid Hair", hcl)
     return False
 
 
@@ -81,7 +82,7 @@ def check_eye(ecl):
     valid_eye_color = ["amb", "blu", "brn", "gry", "grn", "hzl", "oth"]
     if ecl in valid_eye_color:
         return True
-    print("Invalid EYE")
+    print("Invalid EYE", ecl)
     return False
 
 

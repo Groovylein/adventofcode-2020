@@ -30,7 +30,8 @@ def test_check_data():
 @pytest.mark.parametrize("hcl, return_value",
                          [("#123abc", True),
                           ("#123abz", False),
-                          ("123abc", False)])
+                          ("123abc", False),
+                          ])
 def test_check_hair(hcl, return_value):
     assert main.check_hair(hcl) is return_value
 
@@ -38,6 +39,7 @@ def test_check_hair(hcl, return_value):
 @pytest.mark.parametrize("hgt, return_value",
                          [("60in", True),
                           ("190cm", True),
+                          ("175cm", True),
                           ("190in", False),
                           ("190", False)])
 def test_check_height(hgt, return_value):
