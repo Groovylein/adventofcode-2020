@@ -1,4 +1,5 @@
 import os
+import pytest
 
 from day_4 import main
 
@@ -25,3 +26,19 @@ def test_check_data():
     returned_list = main.transform_data(test_input_file)
     valid_passports = main.check_data(returned_list)
     assert valid_passports == 2
+
+@pytest.mark.parametrize("hcl, return_value",
+                         [("#123abc", True),
+                          ("#123abz", False),
+                          ("123abc", False)])
+def test_check_hair(hcl, return_value):
+    assert main.check_hair(hcl) is return_value
+
+
+@pytest.mark.parametrize("hgt, return_value",
+                         [("60in", True),
+                          ("190cm", True),
+                          ("190in", False),
+                          ("190", False)])
+def test_check_height(hgt, return_value):
+    assert main.check_height(hgt) is return_value
