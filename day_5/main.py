@@ -36,3 +36,10 @@ if __name__ == '__main__':
             calc = (row * 8) + column
             list_of_calculations.append(calc)
     print("PART ONE:",max(list_of_calculations))
+
+    list_of_all_seats = []
+    for i in range(1, 127):
+        for j in range(0, 8):
+            list_of_all_seats.append((i * 8)+j)
+
+    print((set(list_of_calculations) | set(list_of_all_seats)) - (set(list_of_calculations) & set(list_of_all_seats)))
