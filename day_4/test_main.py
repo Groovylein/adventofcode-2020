@@ -44,3 +44,11 @@ def test_check_hair(hcl, return_value):
                           ("190", False)])
 def test_check_height(hgt, return_value):
     assert main.check_height(hgt) is return_value
+
+
+@pytest.mark.parametrize("pid, return_value",
+                         [("000000001", True),
+                          ("123456789", True),
+                          ("0123456789", False)])
+def test_check_pid(pid, return_value):
+    assert main.check_pid(pid) is return_value

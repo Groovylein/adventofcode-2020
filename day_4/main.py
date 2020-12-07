@@ -87,7 +87,7 @@ def check_eye(ecl):
 
 
 def check_pid(pid):
-    if re.search(r"^([0-9]{9})", pid):
+    if re.search(r"^([0-9]{9}$)", pid):
         return True
     print("Invalid PID", pid)
     return False
